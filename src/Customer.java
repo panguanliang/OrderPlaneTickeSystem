@@ -1,8 +1,12 @@
-public class Custemer {
+import java.util.Date;
+
+public class Customer {
     private String id;
-    private String name;
+    private String customerType;//乘客类型：成人、儿童、婴儿
+    private String name;//乘客姓名
     private String phone;
     private String cardid;
+    private Date birthDate;
 
     public String getId() {
         return id;
