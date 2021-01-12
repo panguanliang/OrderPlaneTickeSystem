@@ -1,9 +1,12 @@
+import java.util.Set;
+
 public class Flight {
     private String id;
-    private String planeType;
-    private String departureAirPort;
-    private String destiantionAirPort;
-    private String departureData;
+    private String planeType;//飞机型号
+    private String departureAirPort;//出发机场
+    private String destiantionAirPort;//到达机场
+    private String departureDate;//出发时间
+    private Set<Customer> customerSet;
 
     public String getId() {
         return id;
@@ -38,10 +41,26 @@ public class Flight {
     }
 
     public String getDepartureData() {
-        return departureData;
+        return departureDate;
     }
 
     public void setDepartureData(String departureData) {
-        this.departureData = departureData;
+        this.departureDate = departureData;
+    }
+
+    public String getDepartureDate() {
+        return departureDate;
+    }
+
+    public void setDepartureDate(String departureDate) {
+        this.departureDate = departureDate;
+    }
+
+    public Set<Customer> getCustomerSet() {
+        return customerSet;
+    }
+
+    public void setCustomerSet(Set<Customer> customerSet) {
+        this.customerSet = customerSet;
     }
 }

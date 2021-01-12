@@ -7,6 +7,23 @@ public class Customer {
     private String phone;
     private String cardid;
     private Date birthDate;
+    private Order order;
+
+    public String getCustomerType() {
+        return customerType;
+    }
+
+    public void setCustomerType(String customerType) {
+        this.customerType = customerType;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
 
     public String getId() {
         return id;
@@ -38,5 +55,13 @@ public class Customer {
 
     public void setCardid(String cardid) {
         this.cardid = cardid;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 }
