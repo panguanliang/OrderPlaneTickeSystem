@@ -5,10 +5,10 @@ import java.util.Set;
 public class Flight {
     private String id;
     private String planeType;//飞机型号
+    private String currentSeatNum;//总座位数
     private String departureAirPort;//出发机场
     private String destiantionAirPort;//到达机场
     private String departureDate;//出发时间
-    private Set<Customer> customerSet;
 
     public String getId() {
         return id;
@@ -24,6 +24,14 @@ public class Flight {
 
     public void setPlaneType(String planeType) {
         this.planeType = planeType;
+    }
+
+    public String getCurrentSeatNum() {
+        return currentSeatNum;
+    }
+
+    public void setCurrentSeatNum(String currentSeatNum) {
+        this.currentSeatNum = currentSeatNum;
     }
 
     public String getDepartureAirPort() {
@@ -56,13 +64,5 @@ public class Flight {
 
     public void setDepartureDate(String departureDate) {
         this.departureDate = departureDate;
-    }
-
-    public Set<Customer> getCustomerSet() {
-        return customerSet;
-    }
-
-    public void setCustomerSet(Set<Customer> customerSet) {
-        this.customerSet = customerSet;
     }
 }
