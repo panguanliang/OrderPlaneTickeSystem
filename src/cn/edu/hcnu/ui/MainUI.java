@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.UUID;
 
-public class MainUI implements IFlightService {
+public class MainUI {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("按1，录入航班信息");
@@ -38,39 +38,7 @@ public class MainUI implements IFlightService {
 
             IFlightService iFlightService=new FlightServiceImpl();
             iFlightService.insertFlight(flight);
-            System.out.println(flight.toString());
         }
-    }
-
-
-    @Override
-    public void insertFlight(Flight flight) {
-
-    }
-
-    @Override
-    public Set<Flight> getAllFlights() {
-        return null;
-    }
-
-    @Override
-    public Flight getFlightByDepartureTime(String departureTime) {
-        return null;
-    }
-
-    @Override
-    public Flight getFlightByDepartureAirPort(String departureAirPort) {
-        return null;
-    }
-
-    @Override
-    public Flight getFlightByDestinationAirPort(String destinationAirPort) {
-        return null;
-    }
-
-    @Override
-    public void updateFlight(Flight flight) {
-
     }
 }
 

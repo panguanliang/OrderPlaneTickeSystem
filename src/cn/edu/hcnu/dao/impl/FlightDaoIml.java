@@ -6,9 +6,11 @@ import cn.edu.hcnu.dao.IFlightDao;
 import java.util.Set;
 
 public class FlightDaoIml implements IFlightDao {
-    @Override
-    public void insertFlight(Flight flight) {
 
+    @Override
+
+    public void insertFlight(Flight flight) {
+        System.out.println("Dao层"+flight);
     }
 
     @Override
