@@ -1,3 +1,5 @@
+package cn.edu.hcnu.bean;
+
 import java.util.Date;
 
 public class Customer {
