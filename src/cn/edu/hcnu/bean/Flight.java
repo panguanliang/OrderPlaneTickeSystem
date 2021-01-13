@@ -11,7 +11,8 @@ public class Flight {
     private String destiantionAirPort;//到达机场
     private String departureDate;//出发时间
 
-    public Flight(String flightID, String planeType, int currentSeatNum, String departureAirPort, String destiantionAirPort, String departureDate) {
+    public Flight(String id, String flightID, String planeType, int currentSeatNum, String departureAirPort, String destiantionAirPort, String departureDate) {
+        this.id = id;
         this.flightID = flightID;
         this.planeType = planeType;
         this.currentSeatNum = currentSeatNum;
@@ -66,14 +67,6 @@ public class Flight {
 
     public void setDestiantionAirPort(String destiantionAirPort) {
         this.destiantionAirPort = destiantionAirPort;
-    }
-
-    public String getDepartureData() {
-        return departureDate;
-    }
-
-    public void setDepartureData(String departureData) {
-        this.departureDate = departureData;
     }
 
     public String getDepartureDate() {
