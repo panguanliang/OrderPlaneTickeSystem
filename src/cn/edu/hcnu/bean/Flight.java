@@ -11,7 +11,8 @@ public class Flight {
     private String destiantionAirPort;//到达机场
     private String departureDate;//出发时间
 
-    public Flight(String flightID, String planeType, int currentSeatNum, String departureAirPort, String destiantionAirPort, String departureDate) {
+    public Flight(String id, String flightID, String planeType, int currentSeatNum, String departureAirPort, String destiantionAirPort, String departureDate) {
+        this.id = id;
         this.flightID = flightID;
         this.planeType = planeType;
         this.currentSeatNum = currentSeatNum;
@@ -68,14 +69,6 @@ public class Flight {
         this.destiantionAirPort = destiantionAirPort;
     }
 
-    public String getDepartureData() {
-        return departureDate;
-    }
-
-    public void setDepartureData(String departureData) {
-        this.departureDate = departureData;
-    }
-
     public String getDepartureDate() {
         return departureDate;
     }
@@ -86,13 +79,13 @@ public class Flight {
 
     @Override
     public String toString() {
-        return "Flight{" +
-                "flightID='" + flightID + '\'' +
-                ", planeType='" + planeType + '\'' +
-                ", currentSeatNum=" + currentSeatNum +
-                ", departureAirPort='" + departureAirPort + '\'' +
-                ", destiantionAirPort='" + destiantionAirPort + '\'' +
-                ", departureDate='" + departureDate + '\'' +
+        return "航班信息{" +
+                "航班编号='" + flightID + '\'' +
+                ", 机型='" + planeType + '\'' +
+                ", 座位数=" + currentSeatNum +
+                ", 起飞机场='" + departureAirPort + '\'' +
+                ", 目的机场='" + destiantionAirPort + '\'' +
+                ", 起飞时间='" + departureDate + '\'' +
                 '}';
     }
 }
