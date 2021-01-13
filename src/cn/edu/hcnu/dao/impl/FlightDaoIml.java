@@ -4,6 +4,7 @@ import cn.edu.hcnu.bean.Flight;
 import cn.edu.hcnu.dao.IFlightDao;
 
 import java.sql.*;
+import java.util.HashSet;
 import java.util.Set;
 
 public class FlightDaoIml implements IFlightDao {
@@ -28,8 +29,28 @@ public class FlightDaoIml implements IFlightDao {
     }
 
     @Override
-    public Set<Flight> getAllFlights() {
-        return null;
+    public Set<Flight> getAllFlights() throws SQLException {
+        Set<Flight> allFlights=new HashSet<Flight>();
+        String url="jdbc:oracle:thin:@localhost:1521:orcl";
+        String username="pgl";
+        String password="123";
+        Connection conn= DriverManager.getConnection(url,username,password);
+        String sql="SELECT * FROM flight";
+        PreparedStatement pstm=conn.prepareStatement(sql);
+        ResultSet rs=pstm.executeQuery();
+        while(rs.next()){
+            String id=rs.getString("ID");
+            String flightID=rs.getString("FLIGHT_ID");
+            String planeType=rs.getString("PLANE_TYPE");
+            int currentSeatNum=rs.getInt("TOTAL_SEATS_NUM");
+            String departureAirPort=rs.getString("DEPARTURE_AIRPORT");
+            String destiantionAirPort=rs.getString("DESTINATION_AIRPORT");
+            String departureDate=rs.getString("DEPARTURE_TIME");
+
+            Flight flight = new Flight(id, flightID, planeType, currentSeatNum, departureAirPort, destiantionAirPort, departureDate);
+            allFlights.add(flight);
+        }
+        return allFlights;
     }
 
     @Override
