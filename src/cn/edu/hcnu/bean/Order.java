@@ -1,12 +1,25 @@
+package cn.edu.hcnu.bean;
+
+import java.util.Set;
+
 public class Order {
-    private String jpjg;
-    private float airPortTax;
-    private float ryf;
-    private float hlzhx;
-    private float jpgtx;
-    private float yhq;
-    private float hszj;
-    private Customer customer[];
+    private String id;
+    private String jpjg;//机票价格
+    private float airPortTax;//机场税
+    private float ryf;//燃油费
+    private float hlzhx;//航空综合险
+    private float jpgtx;//机票该退险
+    private float yhq;//优惠券
+    private float hszj;//含税总价
+    private Set<Customer> customer[];
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getJpjg() {
         return jpjg;
@@ -64,11 +77,11 @@ public class Order {
         this.hszj = hszj;
     }
 
-    public Customer[] getCustomer() {
+    public Set<Customer>[] getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer[] customer) {
+    public void setCustomer(Set<Customer>[] customer) {
         this.customer = customer;
     }
 }
