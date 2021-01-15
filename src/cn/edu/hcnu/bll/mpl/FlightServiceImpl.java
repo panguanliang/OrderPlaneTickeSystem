@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class FlightServiceImpl implements IFlightService {
 
-        IFlightDao iFlightDao;
+        IFlightDao iFlightDao=new FlightDaoIml();
 
     public FlightServiceImpl() {
         iFlightDao=new FlightDaoIml();
@@ -18,27 +18,27 @@ public class FlightServiceImpl implements IFlightService {
 
     @Override
     public void insertFlight(Flight flight) throws SQLException {
-        iFlightDao.insertFlight(flight);
+        this.iFlightDao.insertFlight(flight);
     }
 
     @Override
     public Set<Flight> getAllFlights() throws SQLException {
-        return iFlightDao.getAllFlights();
+        return this.iFlightDao.getAllFlights();
     }
 
     @Override
-    public Flight getFlightByDepartureTime(String departureTime) {
-        return null;
+    public Flight getFlightByDepartureTime(String departureTime) throws SQLException {
+        return this.iFlightDao.getFlightByDepartureTime(departureTime);
     }
 
     @Override
-    public Flight getFlightByDepartureAirPort(String departureAirPort) {
-        return null;
+    public Flight getFlightByDepartureAirPort(String departureAirPort) throws SQLException {
+        return this.iFlightDao.getFlightByDepartureAirPort(departureAirPort);
     }
 
     @Override
-    public Flight getFlightByDestinationAirPort(String destinationAirPort) {
-        return null;
+    public Flight getFlightByDestinationAirPort(String destinationAirPort) throws SQLException {
+        return this.iFlightDao.getFlightByDestinationAirPort(destinationAirPort);
     }
 
     @Override
